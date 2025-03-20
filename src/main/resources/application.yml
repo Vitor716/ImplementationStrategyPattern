@@ -1,0 +1,26 @@
+server:
+  port: 8080
+  error:
+    include-stacktrace: on_param
+spring:
+  datasource:
+    url: jdbc:h2:mem:36c830f3-fe1f-4094-aadd-07acbfc5745d
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: DEBUG
